@@ -47,6 +47,24 @@ class WebServiceAPI {
         })
     }
     
+    func getMovieDetails(_ movieId: String, completion:@escaping (Bool) -> Void) {
+        sessionManager.get(Constants.movieDetailPath + movieId, parameters: defaultParams, progress: nil, success: {  (task:URLSessionDataTask, responseObject:Any?) in
+            guard responseObject != nil else {
+                completion(false)
+                return
+            }
+            
+            let response = responseObject! as! [String : Any]
+            print(response)
+            
+            completion(true)
+            
+        }, failure: { (task:URLSessionDataTask?, error:Error) in
+            print(error)
+            completion(false)
+        })
+    }
+    
     func populateMovies(fromResponse response:Any) -> (movies:[Movie], totalPages:Int) {
         let responseObject = response as! [String : Any]
         guard let results = responseObject[Constants.ServerKey.results] as? [AnyObject] else {

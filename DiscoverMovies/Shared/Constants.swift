@@ -21,12 +21,18 @@ enum MoviesError: Error {
 public struct Constants {
     
     public static let APIKey = "328c283cd27bd1877d9080ccb1604c91"
-    public static let APIUrlPrefix = "https://api.themoviedb.org/3"
+    public static let APIUrlPrefix = "https://api.themoviedb.org/3/"
+    
     public static let imageUrlPrefix = "https://image.tmdb.org/t/p"
     public static let releaseDatePath = "discover/movie?sort_by=release_date.desc"
+    public static let moviePath = "movie/"
     
     static var byReleaseDate: String {
         return APIUrlPrefix + releaseDatePath
+    }
+    
+    static var movieDetailPath: String {
+        return APIUrlPrefix + moviePath
     }
     
     public struct ServerKey {
@@ -34,8 +40,6 @@ public struct Constants {
         static let totalPages = "total_pages"
         static let page = "page"
         static let genres = "genres"
-        static let cast = "cast"
-        static let images = "images"
         static let name = "name"
         static let id = "id"
     }
