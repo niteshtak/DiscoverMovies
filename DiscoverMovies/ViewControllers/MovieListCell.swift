@@ -6,4 +6,26 @@
 //  Copyright © 2017 NiteshTak. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class MovieListCell : UITableViewCell {
+    var imageLoadDataTask:URLSessionDataTask?
+    var imageURL: URL? {
+        didSet {
+            guard imageView != nil else {
+                return
+            }
+            imageView!.image = UIImage(named: "placeholder")
+            
+            if let url = imageURL {
+                imageLoadDataTask = imageView!.downloadedFrom(url: url)
+            }
+        }
+    }
+    
+    func cancelImageLoad() {
+        if let task = imageLoadDataTask {
+            task.cancel()
+        }
+    }
+}

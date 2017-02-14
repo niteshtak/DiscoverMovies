@@ -43,21 +43,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wXy-sf-CtE">
-                                            <rect key="frame" x="46" y="-2" width="33" height="24"/>
+                                            <rect key="frame" x="59" y="-2" width="33" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ilb-GE-NqE">
-                                            <rect key="frame" x="46" y="22" width="59" height="24"/>
+                                            <rect key="frame" x="59" y="22" width="59" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="placeholder" id="Xf0-E5-dtW">
-                                            <rect key="frame" x="15" y="13" width="16" height="16"/>
+                                            <rect key="frame" x="15" y="0.0" width="29" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -129,7 +129,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="label" destination="9zE-zC-ZEW" id="Olq-5c-a6k"/>
+                                    <outlet property="label" destination="9zE-zC-ZEW" id="Tkm-cd-6PV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -148,6 +148,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="placeholder" width="16" height="16"/>
+        <image name="placeholder" width="50" height="74"/>
     </resources>
 </document>
