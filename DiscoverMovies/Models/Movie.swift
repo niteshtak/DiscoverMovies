@@ -16,6 +16,9 @@ class Movie : CustomDebugStringConvertible {
     var id: Int
     var genres: [Int] = []
     var overview: String
+    var popularity: Float
+    var voteAverage: Float
+    var synopsis: String
 
     var debugDescription: String {
         return title
@@ -27,6 +30,9 @@ class Movie : CustomDebugStringConvertible {
         overview = response.object(forKey: Constants.MovieKeys.overview) as? String ?? ""
         posterPath = response.object(forKey: Constants.MovieKeys.posterPath) as? String ?? ""
         backdropPath = response.object(forKey: Constants.MovieKeys.backdropPath) as? String ?? ""
+        popularity = response.object(forKey: Constants.MovieKeys.popularity) as! Float
+        voteAverage = response.object(forKey: Constants.MovieKeys.voteAverage) as! Float
+        synopsis = response.object(forKey: Constants.MovieKeys.synopsis) as? String ?? ""
     
         if let generes = response.object(forKey: Constants.MovieKeys.genreIds) as? [Int] {
             genres = generes

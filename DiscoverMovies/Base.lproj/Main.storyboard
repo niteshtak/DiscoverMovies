@@ -30,37 +30,48 @@
         <scene sceneID="4NF-Y4-ZeE">
             <objects>
                 <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="rVS-5i-1QB" customClass="MovieListViewController" customModule="DiscoverMovies" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pfp-cX-JXk">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" id="pfp-cX-JXk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="wXy-sf-CtE" detailTextLabel="Ilb-GE-NqE" imageView="Xf0-E5-dtW" style="IBUITableViewCellStyleSubtitle" id="pmL-ld-YTo" customClass="MovieListCell" customModule="DiscoverMovies" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="wXy-sf-CtE" detailTextLabel="Ilb-GE-NqE" imageView="Xf0-E5-dtW" rowHeight="79" style="IBUITableViewCellStyleSubtitle" id="pmL-ld-YTo" customClass="MovieListCell" customModule="DiscoverMovies" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="22" width="375" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pmL-ld-YTo" id="V26-zB-GYT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wXy-sf-CtE">
-                                            <rect key="frame" x="59" y="-2" width="33" height="24"/>
+                                            <rect key="frame" x="80" y="19" width="32" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ilb-GE-NqE">
-                                            <rect key="frame" x="59" y="22" width="59" height="24"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Popularity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ilb-GE-NqE">
+                                            <rect key="frame" x="80" y="41" width="63" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="placeholder" id="Xf0-E5-dtW">
-                                            <rect key="frame" x="15" y="0.0" width="29" height="43"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="placeholder_movie_list" id="Xf0-E5-dtW">
+                                            <rect key="frame" x="15" y="2" width="50" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="arrow-right" translatesAutoresizingMaskIntoConstraints="NO" id="7VN-LB-zoW">
+                                            <rect key="frame" x="347" y="27" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ilg-8E-67L">
+                                            <rect key="frame" x="0.0" y="78" width="375" height="1"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -76,11 +87,11 @@
                             <outlet property="delegate" destination="rVS-5i-1QB" id="Owe-Zx-S5G"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Popular Movies" id="4hY-LL-7F9"/>
+                    <navigationItem key="navigationItem" title="Discover Movies" id="4hY-LL-7F9"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeS-Z2-uPp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-630"/>
+            <point key="canvasLocation" x="708" y="-630.13493253373315"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="C69-yM-IF6">
@@ -148,6 +159,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="placeholder" width="50" height="74"/>
+        <image name="arrow-right" width="40" height="40"/>
+        <image name="placeholder_movie_list" width="50" height="74"/>
     </resources>
 </document>

@@ -27,6 +27,7 @@ class WebServiceAPI {
         
         var params = defaultParams
         params[Constants.ServerKey.page] = page
+        params["primary_release_date.lte"] = "2016-12-31"
         
         sessionManager.get(endpoint, parameters: params, progress: nil, success: { (task:URLSessionDataTask, responseObject:Any?) in
             guard responseObject != nil else {
@@ -47,21 +48,21 @@ class WebServiceAPI {
         })
     }
     
-    func getMovieDetails(_ movieId: String, completion:@escaping (Bool) -> Void) {
+    func getMovieDetails(_ movieId: String, completion:@escaping (Movie?, Bool, Error?) -> Void) {
         sessionManager.get(Constants.movieDetailPath + movieId, parameters: defaultParams, progress: nil, success: {  (task:URLSessionDataTask, responseObject:Any?) in
             guard responseObject != nil else {
-                completion(false)
+                completion(nil, false, MoviesError.EmptyResponse)
                 return
             }
             
             let response = responseObject! as! [String : Any]
-            print(response)
+            let movie = Movie.init(response: response as AnyObject)
             
-            completion(true)
+            completion(movie, true, nil)
             
-        }, failure: { (task:URLSessionDataTask?, error:Error) in
+        }, failure: {(task:URLSessionDataTask?, error:Error) in
             print(error)
-            completion(false)
+             completion(nil, false, error)
         })
     }
     
