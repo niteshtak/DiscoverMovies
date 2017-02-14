@@ -11,8 +11,9 @@
 		A34F2C8E1E534E6700D1C04F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F2C8D1E534E6700D1C04F /* Movie.swift */; };
 		A34F2C921E534F7000D1C04F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F2C911E534F7000D1C04F /* Constants.swift */; };
 		A34F2C961E5356EA00D1C04F /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F2C951E5356EA00D1C04F /* UIImageView+Download.swift */; };
+		A34F2C991E53593200D1C04F /* MovieBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F2C981E53593200D1C04F /* MovieBookViewController.swift */; };
+		A34F2C9C1E535BD300D1C04F /* WebServicesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F2C9B1E535BD300D1C04F /* WebServicesAPI.swift */; };
 		A3D4C9851E50B37D00D48A59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4C9841E50B37D00D48A59 /* AppDelegate.swift */; };
-		A3D4C9871E50B37D00D48A59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4C9861E50B37D00D48A59 /* ViewController.swift */; };
 		A3D4C98A1E50B37D00D48A59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D4C9881E50B37D00D48A59 /* Main.storyboard */; };
 		A3D4C98C1E50B37D00D48A59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D4C98B1E50B37D00D48A59 /* Assets.xcassets */; };
 		A3D4C98F1E50B37D00D48A59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D4C98D1E50B37D00D48A59 /* LaunchScreen.storyboard */; };
@@ -47,9 +48,10 @@
 		A34F2C8D1E534E6700D1C04F /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = Models/Movie.swift; sourceTree = "<group>"; };
 		A34F2C911E534F7000D1C04F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Shared/Constants.swift; sourceTree = "<group>"; };
 		A34F2C951E5356EA00D1C04F /* UIImageView+Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
+		A34F2C981E53593200D1C04F /* MovieBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieBookViewController.swift; path = ViewControllers/MovieBookViewController.swift; sourceTree = "<group>"; };
+		A34F2C9B1E535BD300D1C04F /* WebServicesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServicesAPI.swift; path = Services/WebServicesAPI.swift; sourceTree = "<group>"; };
 		A3D4C9811E50B37D00D48A59 /* DiscoverMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscoverMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D4C9841E50B37D00D48A59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A3D4C9861E50B37D00D48A59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3D4C9891E50B37D00D48A59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3D4C98B1E50B37D00D48A59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3D4C98E1E50B37D00D48A59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		A34F2C931E5354AF00D1C04F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A34F2C9B1E535BD300D1C04F /* WebServicesAPI.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -139,6 +142,24 @@
 				A34F2C951E5356EA00D1C04F /* UIImageView+Download.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A34F2C971E53591900D1C04F /* MovieBookVC */ = {
+			isa = PBXGroup;
+			children = (
+				A34F2C981E53593200D1C04F /* MovieBookViewController.swift */,
+			);
+			name = MovieBookVC;
+			sourceTree = "<group>";
+		};
+		A34F2C9A1E53597000D1C04F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A34F2C971E53591900D1C04F /* MovieBookVC */,
+				A3D4C9B21E50BBF700D48A59 /* MovieDetailVC */,
+				A3D4C9B31E50BC0600D48A59 /* MovieListVC */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		A3D4C9781E50B37D00D48A59 = {
@@ -166,14 +187,12 @@
 		A3D4C9831E50B37D00D48A59 /* DiscoverMovies */ = {
 			isa = PBXGroup;
 			children = (
+				A34F2C9A1E53597000D1C04F /* ViewControllers */,
 				A34F2C941E5356DB00D1C04F /* Extensions */,
 				A34F2C931E5354AF00D1C04F /* Services */,
 				A34F2C901E534F5100D1C04F /* Shared */,
 				A34F2C8F1E534E6E00D1C04F /* Models */,
-				A3D4C9B31E50BC0600D48A59 /* MovieListVC */,
-				A3D4C9B21E50BBF700D48A59 /* MovieDetailVC */,
 				A3D4C9841E50B37D00D48A59 /* AppDelegate.swift */,
-				A3D4C9861E50B37D00D48A59 /* ViewController.swift */,
 				A3D4C9881E50B37D00D48A59 /* Main.storyboard */,
 				A3D4C98B1E50B37D00D48A59 /* Assets.xcassets */,
 				A3D4C98D1E50B37D00D48A59 /* LaunchScreen.storyboard */,
@@ -410,9 +429,10 @@
 				A34F2C961E5356EA00D1C04F /* UIImageView+Download.swift in Sources */,
 				A3D4C9B51E50BC2A00D48A59 /* MovieListViewController.swift in Sources */,
 				A3D4C9B91E50BC5000D48A59 /* MovieDetailViewController.swift in Sources */,
-				A3D4C9871E50B37D00D48A59 /* ViewController.swift in Sources */,
 				A3D4C9B71E50BC3A00D48A59 /* MovieListCell.swift in Sources */,
 				A3D4C9851E50B37D00D48A59 /* AppDelegate.swift in Sources */,
+				A34F2C991E53593200D1C04F /* MovieBookViewController.swift in Sources */,
+				A34F2C9C1E535BD300D1C04F /* WebServicesAPI.swift in Sources */,
 				A3D4C9BB1E50BC5F00D48A59 /* MovieDetailCell.swift in Sources */,
 				A34F2C921E534F7000D1C04F /* Constants.swift in Sources */,
 			);

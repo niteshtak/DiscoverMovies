@@ -8,6 +8,16 @@
 
 import Foundation
 
+enum MovieDetailSection: String {
+    case Overview = "Overview"
+    case Title = "Title"
+}
+
+enum MoviesError: Error {
+    case EmptyResponse
+    case InvalidResponse
+}
+
 public struct Constants {
     
     public static let APIKey = "328c283cd27bd1877d9080ccb1604c91"
@@ -15,4 +25,27 @@ public struct Constants {
     public static let imageUrlPrefix = "https://image.tmdb.org/t/p"
     public static let releaseDatePath = "discover/movie?sort_by=release_date.desc"
     
+    static var byReleaseDate: String {
+        return APIUrlPrefix + releaseDatePath
+    }
+    
+    public struct ServerKey {
+        static let results = "results"
+        static let totalPages = "total_pages"
+        static let page = "page"
+        static let genres = "genres"
+        static let cast = "cast"
+        static let images = "images"
+        static let name = "name"
+        static let id = "id"
+    }
+    
+    struct MovieKeys {
+        static let id = "id"
+        static let title = "title"
+        static let posterPath = "poster_path"
+        static let backdropPath = "backdrop_path"
+        static let genreIds = "genre_ids"
+        static let overview = "overview"
+    }
 }

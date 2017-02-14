@@ -139,7 +139,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="imageView" destination="p4T-5W-gH1" id="5gd-aP-zvf"/>
+                        <outlet property="imageView" destination="p4T-5W-gH1" id="gfl-mv-kyk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4O7-iU-P2k" userLabel="First Responder" sceneMemberID="firstResponder"/>

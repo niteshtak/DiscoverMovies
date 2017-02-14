@@ -8,15 +8,6 @@
 
 import Foundation
 
-struct MovieKeys {
-    static let id = "id"
-    static let title = "title"
-    static let posterPath = "poster_path"
-    static let backdropPath = "backdrop_path"
-    static let genreIds = "genre_ids"
-    static let overview = "overview"
-}
-
 class Movie : CustomDebugStringConvertible {
     
     var title: String
@@ -31,13 +22,13 @@ class Movie : CustomDebugStringConvertible {
     }
 
     init(response:AnyObject) {
-        id = response.object(forKey: MovieKeys.id) as! Int
-        title = response.object(forKey: MovieKeys.title) as? String ?? ""
-        overview = response.object(forKey: MovieKeys.overview) as? String ?? ""
-        posterPath = response.object(forKey: MovieKeys.posterPath) as? String ?? ""
-        backdropPath = response.object(forKey: MovieKeys.backdropPath) as? String ?? ""
-        
-        if let generes = response.object(forKey: MovieKeys.genreIds) as? [Int] {
+        id = response.object(forKey: Constants.MovieKeys.id) as! Int
+        title = response.object(forKey: Constants.MovieKeys.title) as? String ?? ""
+        overview = response.object(forKey: Constants.MovieKeys.overview) as? String ?? ""
+        posterPath = response.object(forKey: Constants.MovieKeys.posterPath) as? String ?? ""
+        backdropPath = response.object(forKey: Constants.MovieKeys.backdropPath) as? String ?? ""
+    
+        if let generes = response.object(forKey: Constants.MovieKeys.genreIds) as? [Int] {
             genres = generes
         }
     }
