@@ -32,7 +32,7 @@ class MovieDetailViewController: UITableViewController {
         }
     }
     
-    var order:[MovieDetailSection] = [.Title, .Overview, .Genres, .Synopsis]
+    var order:[MovieDetailSection] = [.Title, .Duration, .Language, .Overview, .Genres, .Synopsis]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,28 @@ class MovieDetailViewController: UITableViewController {
         
         WebServiceAPI.sharedInstance.getMovieDetails("\(movie!.id)") { (movie, isCompleted, error) in
             if let movie = movie {
-                self.movie = movie
+                
+                let oldMovieData = self.movie
+                if let genresIds = oldMovieData?.genereIds, genresIds.count > 0  {
+                     self.movie = movie
+                     self.movie?.genereIds = oldMovieData!.genereIds
+                }
+               
+                if let generes = self.movie?.genres {
+                    var genres = [Int : String]()
+                    let results =  generes
+                    for result in results {
+                        if let name = result[Constants.ServerKey.name] as? String {
+                            let id = result[Constants.ServerKey.id] as! Int
+                            genres[id] = name
+                        }
+                    }
+                    
+                    if genres.count > 0  {
+                        self.genreMap = genres
+                    }
+                }
+                
                 self.tableView.reloadData()
             }
         }
@@ -97,10 +118,19 @@ class MovieDetailViewController: UITableViewController {
             return movie?.overview ?? "not available"
         case .Title:
             return movie?.title ?? "not available"
+        case .Duration:
+            if let runtime = movie?.runtime, runtime > 0 {
+                return "\(runtime) minutes"
+            }
+            return "Not Available"
         case .Genres:
-            return genreIdsToText((movie?.genres)!)
+            return genreIdsToText((movie?.genereIds)!)
         case .Synopsis:
             return movie?.synopsis ?? "not available"
+        case .Language:
+            return ""
+        default :
+            return ""
         }
     }
     

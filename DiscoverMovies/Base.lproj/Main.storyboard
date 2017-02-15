@@ -51,7 +51,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Popularity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ilb-GE-NqE">
-                                            <rect key="frame" x="80" y="41" width="63" height="20"/>
+                                            <rect key="frame" x="80" y="41" width="63" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -126,7 +126,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zE-zC-ZEW">
-                                            <rect key="frame" x="8" y="11" width="359" height="22"/>
+                                            <rect key="frame" x="18" y="11" width="349" height="22"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -136,7 +136,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="9zE-zC-ZEW" secondAttribute="bottom" constant="3" id="A07-ck-xPY"/>
                                         <constraint firstItem="9zE-zC-ZEW" firstAttribute="top" secondItem="3I5-BK-qZT" secondAttribute="topMargin" constant="3" id="PLm-PO-V1f"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="9zE-zC-ZEW" secondAttribute="trailing" id="TrO-84-UJp"/>
-                                        <constraint firstItem="9zE-zC-ZEW" firstAttribute="leading" secondItem="3I5-BK-qZT" secondAttribute="leadingMargin" id="wqf-ej-VgC"/>
+                                        <constraint firstItem="9zE-zC-ZEW" firstAttribute="leading" secondItem="3I5-BK-qZT" secondAttribute="leadingMargin" constant="10" id="wqf-ej-VgC"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

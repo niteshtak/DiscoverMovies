@@ -46,6 +46,7 @@ public struct Constants {
         static let genres = "genres"
         static let name = "name"
         static let id = "id"
+        
     }
     
     struct MovieKeys {
@@ -58,5 +59,7 @@ public struct Constants {
         static let popularity = "popularity"
         static let voteAverage = "vote_average"
         static let synopsis = "synopsis"
+        static let runtime = "runtime"
+        static let spokenLanguages = "spoken_languages"
     }
 }
