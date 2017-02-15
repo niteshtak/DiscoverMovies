@@ -13,6 +13,8 @@ enum MovieDetailSection: String {
     case Title = "Title"
     case Synopsis = "Synopsis"
     case Genres = "Genres"
+    case Duration = "Running Time"
+    case Language = "Language"
 }
 
 enum MoviesError: Error {
