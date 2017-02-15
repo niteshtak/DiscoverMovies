@@ -51,7 +51,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Popularity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ilb-GE-NqE">
-                                            <rect key="frame" x="80" y="41" width="63" height="19.5"/>
+                                            <rect key="frame" x="80" y="41" width="63" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -156,6 +156,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4O7-iU-P2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1490" y="-630"/>
+        </scene>
+        <!--Movie Book View Controller-->
+        <scene sceneID="Zgj-HC-b6d">
+            <objects>
+                <viewController storyboardIdentifier="movieBookVC" id="eGQ-S3-55m" customClass="MovieBookViewController" customModule="DiscoverMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="42S-EW-j92"/>
+                        <viewControllerLayoutGuide type="bottom" id="qFZ-sR-Byg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SOb-8A-PuN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alK-kt-4lQ">
+                                <rect key="frame" x="5" y="0.0" width="370" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="alK-kt-4lQ" id="oja-N0-XMM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fav-El-Fhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2261.5999999999999" y="-630.13493253373315"/>
         </scene>
     </scenes>
     <resources>

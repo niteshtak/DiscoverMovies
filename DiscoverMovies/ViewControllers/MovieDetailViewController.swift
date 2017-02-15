@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 
 class MovieDetailViewController: UITableViewController {
@@ -38,6 +39,9 @@ class MovieDetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Book", style: .plain, target: self, action: #selector(bookTapped))
+        
         configureView()
         
         WebServiceAPI.sharedInstance.getMovieDetails("\(movie!.id)") { (movie, isCompleted, error) in
@@ -75,6 +79,17 @@ class MovieDetailViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         imageLoadDataTask?.cancel()
         super.viewWillDisappear(animated)
+    }
+    
+    // MARK: Actions
+    func bookTapped() {
+        
+        let svc = SFSafariViewController(url: URL(string:"https://www.cathaycineplexes.com.sg")!)
+        self.present(svc, animated: true, completion: nil)
+        
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "movieBookVC") as! MovieBookViewController
+//        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     // MARK: Genres

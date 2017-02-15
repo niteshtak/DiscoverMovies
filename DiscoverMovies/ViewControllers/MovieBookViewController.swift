@@ -10,4 +10,6 @@ import UIKit
 
 class MovieBookViewController : UIViewController {
     
+    @IBOutlet weak var webView: UIWebView!
+    
 }
