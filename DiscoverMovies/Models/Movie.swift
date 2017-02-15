@@ -22,6 +22,7 @@ class Movie : CustomDebugStringConvertible {
     var synopsis: String
     var runtime: Int?
     var spokenLanguages: [[String: Any]]?
+    var originalLanguage: String
     
     var debugDescription: String {
         return title
@@ -39,6 +40,7 @@ class Movie : CustomDebugStringConvertible {
         runtime = response.object(forKey: Constants.MovieKeys.runtime) as? Int
         genres = response.object(forKey: Constants.ServerKey.genres) as? [[String: Any]]
         spokenLanguages = response.object(forKey: Constants.MovieKeys.spokenLanguages) as? [[String: Any]]
+        originalLanguage = response.object(forKey: Constants.MovieKeys.originalLanguage) as? String ?? ""
     
         if let genereids = response.object(forKey: Constants.MovieKeys.genreIds) as? [Int] {
             genereIds = genereids

@@ -61,5 +61,6 @@ public struct Constants {
         static let synopsis = "synopsis"
         static let runtime = "runtime"
         static let spokenLanguages = "spoken_languages"
+        static let originalLanguage = "origianl_language"
     }
 }

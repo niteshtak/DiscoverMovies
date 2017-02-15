@@ -16,6 +16,8 @@ class MovieDetailViewController: UITableViewController {
     var movie: Movie?
     private var genreMap = [Int : String]()
     
+    private var movieLanguage = ""
+    
     
     var imageLoadDataTask:URLSessionDataTask?
     
@@ -32,7 +34,7 @@ class MovieDetailViewController: UITableViewController {
         }
     }
     
-    var order:[MovieDetailSection] = [.Title, .Duration, .Language, .Overview, .Genres, .Synopsis]
+    var order:[MovieDetailSection] = [.Title, .Duration, .Overview, .Genres, .Synopsis, .Language]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +91,22 @@ class MovieDetailViewController: UITableViewController {
         return genreText.joined(separator: ", ")
     }
     
+    // MARK: Language
+    private func getLanguage(_ languageSpoken: [[String: Any]]?) -> String {
+        
+        if languageSpoken != nil && languageSpoken?.count == 0 {
+            return self.movieLanguage
+        }
+        
+        var languageText = [String]()
+        if (languageSpoken?.count)! > 0 {
+            for language in languageSpoken! {
+                languageText += [language[Constants.ServerKey.name] as! String]
+            }
+        }
+        return languageText.joined(separator: ", ")
+    }
+    
     // MARK: Table view
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -126,11 +144,15 @@ class MovieDetailViewController: UITableViewController {
         case .Genres:
             return genreIdsToText((movie?.genereIds)!)
         case .Synopsis:
-            return movie?.synopsis ?? "not available"
+            if let synopsis = movie?.synopsis, synopsis != "" {
+                return synopsis
+            }
+            return "Not Available"
         case .Language:
-            return ""
-        default :
-            return ""
+            if let languageSpoken = self.movie?.spokenLanguages {
+               return getLanguage(languageSpoken)
+            }
+            return "Not Available"
         }
     }
     
